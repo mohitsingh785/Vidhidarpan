@@ -1,0 +1,28 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    android:background="@drawable/bg_grey"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="title"
+        android:padding="10dp"
+        android:background="@drawable/calllog_bg"
+        android:textColor="@color/app_blue"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/contentTextView"
+        android:layout_width="match_parent"
+        android:text="content"
+        android:padding="10dp"
+        android:background="@drawable/calllog_bg"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"/>
+</LinearLayout>

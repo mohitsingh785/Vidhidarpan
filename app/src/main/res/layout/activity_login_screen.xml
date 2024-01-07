@@ -1,0 +1,106 @@
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animation_view"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+
+
+
+        android:layout_marginTop="142dp"
+
+
+        app:layout_constraintVertical_bias="0.38"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="false"
+        app:lottie_rawRes="@raw/login" />
+
+    <EditText
+        android:id="@+id/emailEditText"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+
+        android:layout_below="@+id/animation_view"
+        android:layout_marginTop="51dp"
+        android:background="@drawable/calllog_bg"
+        android:hint="Email"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black" />
+
+    <EditText
+        android:id="@+id/passwordEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/emailEditText"
+        android:layout_marginTop="27dp"
+        android:height="50dp"
+        android:background="@drawable/calllog_bg"
+        android:hint="Password"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black" />
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/passwordEditText"
+        android:layout_marginTop="22dp"
+        android:background="@drawable/bg_button_selector"
+        android:text="Login"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/textview_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/loginButton"
+        android:layout_alignBottom="@+id/loginButton"
+
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="11dp"
+
+        android:layout_marginTop="30dp"
+
+        android:layout_marginEnd="21dp"
+        android:layout_marginBottom="-71dp"
+        android:gravity="center"
+        android:text="Register as Victim"
+        android:textColor="@color/black"
+        />
+
+    <TextView
+        android:id="@+id/textview_advocate_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/loginButton"
+        android:layout_alignBottom="@+id/loginButton"
+        android:layout_alignParentStart="true"
+
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="43dp"
+
+        android:layout_marginTop="55dp"
+
+        android:layout_marginEnd="53dp"
+        android:layout_marginBottom="-103dp"
+        android:gravity="center"
+        android:text="Register as Advocate"
+        android:textColor="@color/black"
+
+        />
+
+</RelativeLayout>
