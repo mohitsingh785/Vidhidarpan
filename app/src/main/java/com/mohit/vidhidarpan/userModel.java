@@ -5,6 +5,7 @@ public class userModel {
     private String email;
     private String password;
     private String phoneNumber;
+    private String firebaseKey;
 
     public userModel(String name, String email, String password, String phoneNumber) {
         this.name = name;
@@ -45,6 +46,15 @@ public class userModel {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public String getFirebaseKey() {
+        return firebaseKey;
+    }
+
+    // Setter for Firebase key
+    public void setFirebaseKey(String firebaseKey) {
+        this.firebaseKey = firebaseKey;
     }
 
     @Override

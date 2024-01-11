@@ -7,19 +7,25 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
-    android:padding="20dp"
+
     tools:context=".AdvocateRegister">
 
     <!-- Title TextView -->
 
-
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:background="?attr/colorPrimary"
+        app:title="SIGN-UP FOR ADVOCATE"
+        app:titleTextColor="@color/white"/>
     <!-- Name EditText -->
     <EditText
         android:id="@+id/nameEditText"
         android:layout_width="match_parent"
         android:gravity="center"
         android:layout_height="40dp"
-        android:layout_marginBottom="25dp"
+        android:layout_margin="15dp"
         android:background="@drawable/calllog_bg"
         android:hint="Name"
         android:textColor="@color/black"
@@ -31,7 +37,8 @@
         android:layout_width="match_parent"
         android:gravity="center"
         android:layout_height="40dp"
-        android:layout_marginBottom="25dp"        android:background="@drawable/calllog_bg"
+        android:layout_margin="15dp"
+        android:background="@drawable/calllog_bg"
         android:hint="Email"
         android:textColor="@color/black"
         android:textColorHint="@color/grey" />
@@ -42,7 +49,8 @@
         android:layout_width="match_parent"
         android:gravity="center"
         android:layout_height="40dp"
-        android:layout_marginBottom="25dp"        android:background="@drawable/calllog_bg"
+        android:layout_margin="15dp"
+        android:background="@drawable/calllog_bg"
         android:hint="Password"
         android:textColor="@color/black"
         android:textColorHint="@color/grey" />
@@ -53,7 +61,8 @@
         android:layout_width="match_parent"
         android:gravity="center"
         android:layout_height="40dp"
-        android:layout_marginBottom="25dp"        android:background="@drawable/calllog_bg"
+        android:layout_margin="15dp"
+        android:background="@drawable/calllog_bg"
         android:hint="Phone Number"
         android:textColor="@color/black"
         android:textColorHint="@color/grey" />
@@ -64,7 +73,8 @@
         android:layout_width="match_parent"
         android:gravity="center"
         android:layout_height="40dp"
-        android:layout_marginBottom="25dp"        android:background="@drawable/calllog_bg"
+        android:layout_margin="15dp"
+        android:background="@drawable/calllog_bg"
         android:hint="Bar Council Number"
         android:textColor="@color/black"
         android:textColorHint="@color/grey" />
@@ -75,7 +85,8 @@
         android:layout_width="match_parent"
         android:gravity="center"
         android:layout_height="40dp"
-        android:layout_marginBottom="25dp"        android:background="@drawable/calllog_bg"
+        android:layout_margin="15dp"
+        android:background="@drawable/calllog_bg"
         android:hint="Description"
         android:textColor="@color/black"
         android:textColorHint="@color/grey" />
@@ -86,7 +97,8 @@
         android:layout_width="match_parent"
         android:gravity="center"
         android:layout_height="40dp"
-        android:layout_marginBottom="25dp"        android:background="@drawable/calllog_bg"
+        android:layout_margin="15dp"
+        android:background="@drawable/calllog_bg"
         android:hint="Cases Won"
         android:textColor="@color/black"
         android:textColorHint="@color/grey" />
@@ -97,7 +109,8 @@
         android:layout_width="match_parent"
         android:gravity="center"
         android:layout_height="40dp"
-        android:layout_marginBottom="25dp"        android:background="@drawable/calllog_bg"
+        android:layout_margin="15dp"
+        android:background="@drawable/calllog_bg"
         android:hint="Cases Taken"
         android:textColor="@color/black"
         android:textColorHint="@color/grey" />
@@ -111,6 +124,7 @@
         android:background="@drawable/bg_button_selector"
         android:textColor="@color/white"
         android:padding="10dp"
-        android:layout_marginTop="25dp" />
+        android:layout_margin="15dp"
+    />
 
 </LinearLayout>

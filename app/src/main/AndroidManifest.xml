@@ -15,6 +15,15 @@
         android:theme="@style/Theme.Vidhidarpan"
         tools:targetApi="31">
         <activity
+            android:name=".DescriptionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ConversationDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ChatActivity"
+            android:exported="false" />
+        <activity
             android:name=".AdvocateDetailActivity"
             android:exported="false" />
         <activity

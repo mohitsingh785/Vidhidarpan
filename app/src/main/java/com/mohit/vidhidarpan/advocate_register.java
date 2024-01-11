@@ -78,6 +78,10 @@ public class advocate_register extends AppCompatActivity {
                 } else {
                     // Email doesn't exist, proceed to create the new advocate
                     String advocateId = advocatesRef.push().getKey(); // Generate a unique key for the advocate
+
+                    // Set the Firebase key in the AdvocateModel instance
+                    newAdvocate.setFirebaseKey(advocateId);
+
                     advocatesRef.child(advocateId).setValue(newAdvocate, new DatabaseReference.CompletionListener() {
                         @Override
                         public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
@@ -100,4 +104,6 @@ public class advocate_register extends AppCompatActivity {
             }
         });
     }
+
+
 }

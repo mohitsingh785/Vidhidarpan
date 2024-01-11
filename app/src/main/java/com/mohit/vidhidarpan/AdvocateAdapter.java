@@ -1,5 +1,6 @@
 package com.mohit.vidhidarpan;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +13,7 @@ import java.util.List;
 import java.util.Locale;
 
 public class AdvocateAdapter extends RecyclerView.Adapter<AdvocateAdapter.AdvocateViewHolder> {
-    private List<AdvocateModel> advocateList;
+    private static List<AdvocateModel> advocateList;
 
     public AdvocateAdapter(List<AdvocateModel> advocateList) {
         this.advocateList = advocateList;
@@ -55,6 +56,26 @@ public class AdvocateAdapter extends RecyclerView.Adapter<AdvocateAdapter.Advoca
             advocatePhoneNumber = itemView.findViewById(R.id.advocatePhoneNumber);
             advocateDescription = itemView.findViewById(R.id.advocateDescription);
             advocateWinPercentage = itemView.findViewById(R.id.advocateWinPercentage);
+
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int position = getAdapterPosition();
+                    if (position != RecyclerView.NO_POSITION) {
+                        AdvocateModel advocate = advocateList.get(position);
+                        Intent intent = new Intent(v.getContext(), DescriptionActivity.class);
+                        System.out.println("LLLLLLLLLLLLLLLLLL "+advocate.getName()+" "+advocate.getPhoneNumber()+" "+advocate.getDescription());
+
+                        intent.putExtra("advocateFirebaseKey", advocate.getFirebaseKey()); // Pass Firebase key
+                        intent.putExtra("name",  advocate.getName()); // Pass Firebase key
+                        intent.putExtra("phonenumber", advocate.getPhoneNumber()); // Pass Firebase key
+                        intent.putExtra("discription", advocate.getDescription()); // Pass Firebase key
+                        v.getContext().startActivity(intent);
+                    }
+                }
+            });
+
         }
     }
 }

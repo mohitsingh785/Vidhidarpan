@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private Chatbot chatbot;
     private ProfileFragment profileFragment;
     private community community;
+    private MessagesFragment messagesFragment;
     MeowBottomNavigation bottomNavigation;
 
     @Override
@@ -43,11 +44,13 @@ public class MainActivity extends AppCompatActivity {
         profileFragment = new ProfileFragment();
         chatbot = new Chatbot();
         community = new community();
+        messagesFragment = new MessagesFragment();
         // Add navigation items
         bottomNavigation.add(new MeowBottomNavigation.Model(1, R.drawable.ic_baseline_home_24));
         bottomNavigation.add(new MeowBottomNavigation.Model(2, R.drawable.ic_baseline_library_books_24));
         bottomNavigation.add(new MeowBottomNavigation.Model(3, R.drawable.ic_baseline_watch_later_24));
         bottomNavigation.add(new MeowBottomNavigation.Model(4, R.drawable.ic_baseline_work_outline_24));
+        bottomNavigation.add(new MeowBottomNavigation.Model(5, R.drawable.ic_baseline_work_outline_24));
 
         // Set a listener for item clicks
         bottomNavigation.setOnClickMenuListener(model -> {
@@ -71,7 +74,13 @@ public class MainActivity extends AppCompatActivity {
                             .replace(R.id.fragmentContainer, community)
                             .commit();
                     break;
-                case 4:
+                    case 4:
+
+                    getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.fragmentContainer, messagesFragment)
+                            .commit();
+                    break;
+                case 5:
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.fragmentContainer, profileFragment)
                             .commit();

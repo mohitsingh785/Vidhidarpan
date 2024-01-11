@@ -7,7 +7,8 @@ import retrofit2.http.POST;
 
 
 public interface OpenAIApiService {
-    @Headers("Authorization: Bearer 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")
-    @POST("v1/engines/text-davinci-003/completions")
+    @Headers("Authorization: Bearer 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")
+    @POST("v1/completions")
     Call<OpenAIResponse> getResponse(@Body OpenAIRequest body);
+
 }

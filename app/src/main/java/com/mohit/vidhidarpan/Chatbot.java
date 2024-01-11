@@ -31,7 +31,6 @@ public class Chatbot extends Fragment {
         textViewResponse = view.findViewById(R.id.text_response);
         Button buttonSend = view.findViewById(R.id.button_send);
 
-        // Inside your Fragment class
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://api.openai.com/")
                 .addConverterFactory(GsonConverterFactory.create())
@@ -39,26 +38,18 @@ public class Chatbot extends Fragment {
 
         OpenAIApiService service = retrofit.create(OpenAIApiService.class);
 
-
         buttonSend.setOnClickListener(v -> {
             String query = editTextQuery.getText().toString();
-            OpenAIRequest request = new OpenAIRequest(query, 200); // 20 tokens should be enough for simple queries
+            OpenAIRequest request = new OpenAIRequest(query, 30); // Adjust the number of tokens as needed
 
             service.getResponse(request).enqueue(new Callback<OpenAIResponse>() {
                 @Override
                 public void onResponse(Call<OpenAIResponse> call, Response<OpenAIResponse> response) {
                     if (response.isSuccessful() && response.body() != null) {
+                        // Use the overridden toString() method of OpenAIResponse
                         textViewResponse.setText(response.body().toString());
-                        System.out.println(response.body().toString());
                     } else {
-                        try {
-                            // Extracting the string content from the error body
-                            String errorString = response.errorBody() != null ? response.errorBody().string() : "null";
-                            textViewResponse.setText("Error: " + errorString);
-                            System.out.println(errorString);
-                        } catch (IOException e) {
-                            textViewResponse.setText("Error in reading response: " + e.getMessage());
-                        }
+                        handleError(response);
                     }
                 }
 
@@ -68,9 +59,21 @@ public class Chatbot extends Fragment {
                 }
             });
 
+
+
         });
 
-
         return view;
+    }
+
+    private void handleError(Response<OpenAIResponse> response) {
+        try {
+            String errorString = response.errorBody() != null ? response.errorBody().string() : "Unknown error";
+            textViewResponse.setText("Error: " + errorString);
+            Log.e("OpenAIError", errorString);
+        } catch (IOException e) {
+            textViewResponse.setText("Error in reading response: " + e.getMessage());
+            Log.e("OpenAIError", "Error reading response", e);
+        }
     }
 }

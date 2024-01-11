@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -77,11 +78,15 @@ public class Login_screen extends AppCompatActivity {
                 if (dataSnapshot.exists()) {
                     for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
                         String userPassword = userSnapshot.child("password").getValue(String.class);
+                        Log.d("LoginScreen", "Fetched Encrypted Password: " + userPassword);
 
                         if (AES.decrypt(userPassword).equals(enteredPassword)) {
                             // Successful login
                             setLoginStatus(true);
                             // Save user data in SharedPreferences
+                            String userKey = userSnapshot.child(
+                                    "firebaseKey").getValue(String.class); // Get the Firebase Database key
+                            saveUserKeyInSharedPreferences(userKey);
                             String userName = userSnapshot.child("name").getValue(String.class);
                             String userPhoneNumber = userSnapshot.child("phoneNumber").getValue(String.class);
 
@@ -124,9 +129,12 @@ public class Login_screen extends AppCompatActivity {
                     for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
                         String userPassword = userSnapshot.child("password").getValue(String.class);
 
-                        if (userPassword.equals(enteredPassword)) {
+                        if (AES.decrypt(userPassword).equals(enteredPassword)) {
                             // Successful login
                             setLoginStatus(true);
+                            String userKey = userSnapshot.child(
+                                    "firebaseKey").getValue(String.class); // Get the Firebase Database key
+                            saveUserKeyInSharedPreferences(userKey);
                             String userName = userSnapshot.child("name").getValue(String.class);
                             String userPhoneNumber = userSnapshot.child("phoneNumber").getValue(String.class);
 
@@ -167,6 +175,12 @@ public class Login_screen extends AppCompatActivity {
         editor.putString("user_name", name);
         editor.putString("user_email", email);
         editor.putString("user_phone_number", phoneNumber);
+        editor.apply();
+    }
+    private void saveUserKeyInSharedPreferences(String userKey) {
+        SharedPreferences sharedPreferences = getSharedPreferences("user", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("user_key", userKey);
         editor.apply();
     }
 }

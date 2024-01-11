@@ -3,7 +3,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:layout_margin="10dp"
-    android:background="@drawable/bg_grey"
+    android:background="@drawable/bg"
     android:padding="16dp">
 
     <TextView
@@ -13,7 +13,7 @@
         android:textSize="18sp"
         android:text="title"
         android:padding="10dp"
-        android:background="@drawable/calllog_bg"
+
         android:textColor="@color/app_blue"
         android:textStyle="bold"/>
 
@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:text="content"
         android:padding="10dp"
-        android:background="@drawable/calllog_bg"
+    android:textColor="@color/dark_grey"
         android:layout_height="wrap_content"
         android:textSize="16sp"/>
 </LinearLayout>

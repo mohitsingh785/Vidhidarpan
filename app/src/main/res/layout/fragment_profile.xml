@@ -6,65 +6,106 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
+
     android:background="@color/white"
     tools:context=".ProfileFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Name:"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"/>
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:background="?attr/colorPrimary"
+        app:title="Settings"
+        app:titleTextColor="@color/white"/>
 
-    <TextView
-        android:id="@+id/textViewName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:text="John Doe"
-        android:textSize="18sp"/>
+    <!-- LinearLayout for existing content -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Email:"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Name:"
+            android:padding="7dp"
 
-    <TextView
-        android:id="@+id/textViewEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:text="johndoe@email.com"
-        android:textSize="18sp"/>
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/calllog_bg"
+            android:textColor="@color/app_blue"
+            android:textSize="20sp"
+            />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:text="Phone Number:"
-        android:textSize="20sp"
-        android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/textViewName"
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:textSize="18sp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_grey"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/black"
+            android:text="John Doe"
+            />
 
-    <TextView
-        android:id="@+id/textViewPhoneNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:text="1234567890"
-        android:textSize="18sp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email:"
+            android:padding="7dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/calllog_bg"
+            android:textColor="@color/app_blue"
 
-    <Button
-        android:id="@+id/buttonLogout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:text="Logout"
-        android:textSize="18sp"
-        android:onClick="logout"/>
+            android:textSize="20sp"
+            />
+
+        <TextView
+            android:id="@+id/textViewEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:background="@drawable/bg_grey"
+            android:padding="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="johndoe@email.com"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:background="@drawable/calllog_bg"
+            android:padding="7dp"
+            android:layout_marginBottom="10dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/app_blue"
+            android:text="Phone Number:"
+            android:textSize="20sp"
+            />
+
+        <TextView
+            android:id="@+id/textViewPhoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="1234567890"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/bg_grey"
+            android:padding="10dp"
+
+            android:textSize="18sp"/>
+
+        <Button
+            android:id="@+id/buttonLogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/less_white"
+            android:text="Logout"
+            android:background="@drawable/bg_button_selector"
+            android:textSize="18sp"
+            android:onClick="logout"/>
+
+    </LinearLayout>
 
 </LinearLayout>

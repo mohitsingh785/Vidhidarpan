@@ -66,6 +66,7 @@ public class User_register extends AppCompatActivity {
                     } else {
                         // Email doesn't exist, proceed to create the new user
                         String userId = usersRef.push().getKey(); // Generate a unique key for the user
+                        newUser.setFirebaseKey(userId);
                         usersRef.child(userId).setValue(newUser, new DatabaseReference.CompletionListener() {
                             @Override
                             public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {

@@ -3,8 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
     tools:context=".Chatbot">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:background="?attr/colorPrimary"
+        app:title="ChatBot"
+        app:titleTextColor="@color/white"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,7 +40,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/bg_button_selector"
             android:backgroundTint="@color/app_blue"
-
+android:textColor="@color/white"
             android:text="Ask to Bot" />
 
         <TextView
@@ -39,9 +48,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
-            android:background="@drawable/calllog_bg"
+
             android:gravity="center"
-            android:text="Result"
+
             android:textColor="@color/black" />
     </LinearLayout>
 

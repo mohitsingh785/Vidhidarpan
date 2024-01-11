@@ -8,17 +8,30 @@
     android:background="@color/white"
     tools:context=".User_register">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="SIGN-UP FOR USER"
+        app:titleTextColor="@color/white" />
+
     <EditText
         android:id="@+id/nameEditText"
         android:layout_width="0dp"
         android:layout_height="45dp"
+        android:layout_margin="16dp"
         android:background="@drawable/calllog_bg"
         android:gravity="center"
         android:hint="Name"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/dark_grey"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="16dp"/>
+        app:layout_constraintHorizontal_bias="0.562"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <EditText
         android:id="@+id/emailEditText"
@@ -27,6 +40,8 @@
         android:background="@drawable/calllog_bg"
         android:gravity="center"
         android:hint="Email"
+        android:textColor="@color/dark_grey"
+
         app:layout_constraintTop_toBottomOf="@id/nameEditText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,6 +54,8 @@
         android:background="@drawable/calllog_bg"
         android:gravity="center"
         android:hint="Password"
+        android:textColor="@color/dark_grey"
+
         app:layout_constraintTop_toBottomOf="@id/emailEditText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,6 +68,8 @@
         android:background="@drawable/calllog_bg"
         android:gravity="center"
         android:hint="Phone Number"
+        android:textColor="@color/dark_grey"
+
         app:layout_constraintTop_toBottomOf="@id/passwordEditText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,6 +83,7 @@
         android:background="@drawable/calllog_bg"
         android:padding="10dp"
         android:layout_margin="15dp"
+        android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@id/phoneNumberEditText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

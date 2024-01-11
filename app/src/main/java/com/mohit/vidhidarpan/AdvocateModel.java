@@ -10,7 +10,7 @@ public class AdvocateModel {
     private int casesWon;
     private int casesTaken;
     private String password;
-
+    private String firebaseKey;
     public AdvocateModel() {
         // Default constructor required for Firebase
     }
@@ -91,6 +91,15 @@ public class AdvocateModel {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+    // Getter for Firebase UID
+    public String getFirebaseKey() {
+        return firebaseKey;
+    }
+
+    // Setter for Firebase key
+    public void setFirebaseKey(String firebaseKey) {
+        this.firebaseKey = firebaseKey;
     }
 }
 

@@ -5,26 +5,18 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/less_white"
-    tools:context=".community">
+    tools:context=".MessagesFragment">
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_height="?attr/actionBarSize"
         android:layout_width="match_parent"
         android:background="?attr/colorPrimary"
-        app:title="Community Post"
+        app:title="CHATS"
         app:titleTextColor="@color/white"/>
-
-    <LinearLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/messagesRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="90dp"
-        android:orientation="vertical">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-    </LinearLayout>
-
+        android:layout_marginTop="100dp"
+        android:layout_height="match_parent" />
 
 </FrameLayout>
